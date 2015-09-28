@@ -8,10 +8,22 @@
     the text file.
 
 """
+unique_words = {}
 
 text_file = open("test.txt")
 
 for line in text_file:
     line = line.rstrip()
     words = line.split(' ')
-    print words
+    
+    for word in words:
+        word = word.rstrip("?!.,")
+        if word != "I":
+            word = word.lower()
+        if unique_words.get(word, 0) == 0:
+            unique_words[word] = 1
+        else: 
+            unique_words[word] += 1 
+
+print unique_words
+
