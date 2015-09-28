@@ -25,5 +25,14 @@ for line in text_file:
         else: 
             unique_words[word] += 1 
 
-print unique_words
+for word in unique_words:
+    count = unique_words[word]
+    print word, count
+
+# Other ways to print the dictionary
+# for word, count in unique_words.items():
+#     print word, count
+
+# for word in unique_words:
+#     print word, unique_words[word]
 
